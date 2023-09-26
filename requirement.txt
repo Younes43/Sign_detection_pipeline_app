@@ -1,0 +1,6 @@
+geopandas
+tk
+tkintermapview
+folium
+pywebview
+matplotlib
