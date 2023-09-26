@@ -4,3 +4,4 @@ tkintermapview
 folium
 pywebview
 matplotlib
+requests

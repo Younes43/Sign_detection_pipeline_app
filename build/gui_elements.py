@@ -1,5 +1,5 @@
 from tkinter import Canvas, Entry, Button, PhotoImage
-from helper_functions import relative_to_assets, upload_video, upload_gps, download_video, download_map, run_pipeline
+from helper_functions import relative_to_assets, upload_video, download_video, download_map, run_pipeline
 
 def setup_gui_elements(window):
         
@@ -41,7 +41,7 @@ def setup_gui_elements(window):
         image=canvas.button_image_1,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda : run_pipeline(window),
+        command=lambda : run_pipeline(window,directory_path_widget),
         relief="flat"
     )
     run_pipeline_btn.place(
@@ -154,13 +154,13 @@ def setup_gui_elements(window):
         164.0,
         image=canvas.entry_image_2
     )
-    video_path = Entry(
+    directory_path_widget = Entry(
         bd=0,
         bg="#F1F5FF",
         fg="#000716",
         highlightthickness=0
     )
-    video_path.place(
+    directory_path_widget.place(
         x=32.0,
         y=146.0,
         width=284.0,
@@ -173,7 +173,7 @@ def setup_gui_elements(window):
         image=canvas.button_image_4,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: upload_video(video_path),
+        command=lambda: upload_video(directory_path_widget),
         relief="flat"
     )
     upload_video_btn.place(
@@ -183,50 +183,50 @@ def setup_gui_elements(window):
         height=22.0
     )
 
-    canvas.create_text(
-        20.0,
-        242.0,
-        anchor="nw",
-        text="Upload GPS Coordinates",
-        fill="#FCFCFC",
-        font=("Roboto Bold", 16 * -1)
-    )
+    # canvas.create_text(
+    #     20.0,
+    #     242.0,
+    #     anchor="nw",
+    #     text="Upload GPS Coordinates",
+    #     fill="#FCFCFC",
+    #     font=("Roboto Bold", 16 * -1)
+    # )
 
-    canvas.entry_image_3 = PhotoImage(
-        file=relative_to_assets("entry_3.png"))
-    entry_bg_3 = canvas.create_image(
-        174.0,
-        299.0,
-        image=canvas.entry_image_3
-    )
-    gps_path = Entry(
-        bd=0,
-        bg="#F1F5FF",
-        fg="#000716",
-        highlightthickness=0
-    )
-    gps_path.place(
-        x=32.0,
-        y=281.0,
-        width=284.0,
-        height=34.0
-    )
+    # canvas.entry_image_3 = PhotoImage(
+    #     file=relative_to_assets("entry_3.png"))
+    # entry_bg_3 = canvas.create_image(
+    #     174.0,
+    #     299.0,
+    #     image=canvas.entry_image_3
+    # )
+    # gps_path = Entry(
+    #     bd=0,
+    #     bg="#F1F5FF",
+    #     fg="#000716",
+    #     highlightthickness=0
+    # )
+    # gps_path.place(
+    #     x=32.0,
+    #     y=281.0,
+    #     width=284.0,
+    #     height=34.0
+    # )
 
-    canvas.button_image_5 = PhotoImage(
-        file=relative_to_assets("button_5.png"))
-    upload_gps_btn = Button(
-        image=canvas.button_image_5,
-        borderwidth=0,
-        highlightthickness=0,
-        command=lambda: upload_gps(gps_path),
-        relief="flat"
-    )
-    upload_gps_btn.place(
-        x=286.0,
-        y=288.0,
-        width=24.0,
-        height=22.0
-    )
+    # canvas.button_image_5 = PhotoImage(
+    #     file=relative_to_assets("button_5.png"))
+    # upload_gps_btn = Button(
+    #     image=canvas.button_image_5,
+    #     borderwidth=0,
+    #     highlightthickness=0,
+    #     command=lambda: upload_gps(gps_path),
+    #     relief="flat"
+    # )
+    # upload_gps_btn.place(
+    #     x=286.0,
+    #     y=288.0,
+    #     width=24.0,
+    #     height=22.0
+    # )
 
     canvas.create_rectangle(
         480.0,
