@@ -57,7 +57,7 @@ def setup_gui_elements(window):
         image=canvas.button_image_2,
         borderwidth=0,
         highlightthickness=0,
-        command=download_video,
+        command=lambda : download_video(),
         relief="flat"
     )
     download_video_btn.place(

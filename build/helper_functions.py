@@ -152,18 +152,22 @@ def process_video(folder_path):
 
 
 def download_video():
-    source_path = output_folder+"/results/demo.mp4"
+    source_path=''
+    for root, dirs, files in os.walk(output_folder):
+        if 'demo.mp4' in files:
+            source_path = os.path.join(root, 'demo.mp4')
+    print(source_path)
     # TO BE COMPLETED
     #
     #
-    #
+    #   
     #
     filetypes = [("Video files", ".mp4 .avi .mov .mkv"), ("All files", "*.*")]
     destination_path = filedialog.asksaveasfilename(title="Save Video As", defaultextension=".mp4", filetypes=filetypes)
     
     if destination_path:
         shutil.copy2(source_path, destination_path)
-        
+    print('Video Downloaded')
         
 def update_canvas_text(canvas, item, message):
     """
