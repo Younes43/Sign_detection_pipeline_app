@@ -152,7 +152,7 @@ def process_video(folder_path):
 
 
 def download_video():
-    source_path = "path/to/your/video.mp4"
+    source_path = output_folder+"results/demo.mp4"
     # TO BE COMPLETED
     #
     #
@@ -193,7 +193,7 @@ def create_map_markers(map_view, data_path, icon_folder_path):
         icon_path = f"{icon_folder_path}/{sign_type}.png"
         if not os.path.exists(icon_path):
             # print(icon_path, ' Not found')
-            icon_path = "../../Signs_icons/images/Default.png"
+            icon_path = "../icons/Default.png"
             
         if icon_path in images_dict:
             icon_image = images_dict[icon_path]
@@ -211,7 +211,7 @@ def compute_avg_coords(data_path):
 
 def plot_map(window):
     print('Started Ploting Map')
-    icon_path = "../../Signs_icons/images"
+    icon_path = "../icons"
     result_table= output_folder+"/result_table.csv"
     
     avg_lat, avg_lon = compute_avg_coords(result_table)
