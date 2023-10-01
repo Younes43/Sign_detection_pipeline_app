@@ -152,7 +152,7 @@ def process_video(folder_path):
 
 
 def download_video():
-    source_path = output_folder+"results/demo.mp4"
+    source_path = output_folder+"/results/demo.mp4"
     # TO BE COMPLETED
     #
     #
